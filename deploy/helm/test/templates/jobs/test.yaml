@@ -1,0 +1,22 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  namespace: app
+  name: admin-job
+  labels:
+    name: admin-job
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: admin-job
+              image: curlimages/curl:7.72.0
+              imagePullPolicy: IfNotPresent
+              command:
+                - /bin/sh
+                - -c
+                - curl http://sharky-study.dev.daum.net/test
+          restartPolicy: OnFailure

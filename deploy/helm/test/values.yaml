@@ -1,0 +1,11 @@
+deployPhase: dev
+replicas: 2
+clusterName: dkos-study
+
+docker:
+  image:
+    repository: idock.daumkakao.io/sharky_p/dkos-study
+    tag: latest
+
+java:
+  opts: -Dspring.profiles.active=dev
