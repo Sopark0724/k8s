@@ -1,3 +1,2 @@
-# simple
-# simple
-# k8s
+## run docker build
+/deploy/build-docker.sh PROJECT_ID VERSION
